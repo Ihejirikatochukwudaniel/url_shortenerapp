@@ -22,11 +22,11 @@ A modern, feature-rich URL shortener built with Flask that transforms long URLs 
 ## 🖥️ Screenshots
 
 ### Main Interface
-![App Screenshot](url_shortenerscreenshot.png)
+url_shortener screenshot.PNG
 
 
 ### Statistics Dashboard
-![App Screenshot](url_shortenerscreenshot2.png)
+
 
 
 ## 🚀 Quick Start
