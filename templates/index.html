@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-body">
+                <h1 class="card-title text-center mb-4">
+                    <i class="fas fa-scissors me-2"></i>Shorten Your URL
+                </h1>
+                
+                <form method="POST" action="{{ url_for('shorten_url') }}">
+                    <div class="mb-3">
+                        <label for="url" class="form-label">Enter your long URL:</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-link"></i></span>
+                            <input type="url" class="form-control" id="url" name="url" 
+                                   placeholder="https://example.com/very-long-url" required>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-magic me-2"></i>Shorten URL
+                        </button>
+                    </div>
+                </form>
+                
+                {% if short_url %}
+                <div class="mt-4 p-3 bg-success bg-opacity-10 border border-success rounded">
+                    <h5 class="text-success mb-3">
+                        <i class="fas fa-check-circle me-2"></i>Success!
+                    </h5>
+                    <div class="mb-3">
+                        <label class="form-label">Your shortened URL:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" value="{{ short_url }}" readonly id="shortUrl">
+                            <button class="btn btn-outline-primary" type="button" onclick="copyToClipboard()">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="{{ url_for('url_stats', short_code=short_code) }}" class="btn btn-info btn-sm">
+                            <i class="fas fa-chart-bar me-1"></i>View Stats
+                        </a>
+                        <a href="{{ short_url }}" target="_blank" class="btn btn-success btn-sm">
+                            <i class="fas fa-external-link-alt me-1"></i>Test Link
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-tachometer-alt fa-3x text-primary mb-3"></i>
+                        <h5>Fast & Reliable</h5>
+                        <p>Lightning-fast URL shortening with 99.9% uptime guarantee.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+                        <h5>Click Analytics</h5>
+                        <p>Track clicks, views, and engagement with detailed statistics.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-shield-alt fa-3x text-info mb-3"></i>
+                        <h5>Secure</h5>
+                        <p>Safe and secure URL shortening with protection against malicious links.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
