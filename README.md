@@ -22,12 +22,14 @@ A modern, feature-rich URL shortener built with Flask that transforms long URLs 
 ## 🖥️ Screenshots
 
 ### Main Interface
-url_shortener screenshot.PNG
+
+![url_shortener screenshot](https://github.com/user-attachments/assets/edad65ef-51fe-488c-b392-ef7d60feb513)
 
 
 ### Statistics Dashboard
 
 
+![url_shortener screenshot 2](https://github.com/user-attachments/assets/005a0bc5-8bcd-4c16-9071-8a1f1fd81b4b)
 
 ## 🚀 Quick Start
 
